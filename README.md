@@ -11,3 +11,10 @@ Um simples sistema para guardar e gerenciar seus links de favortios
 2. Flask
 3. Sqlite3
 4. HTML5+CSS3+JS
+
+##Como ajudar
+Faça fork do projeto pegue issues abertas e resolva, ou as otimize.
+Seja sensanto e documente tudo que fizer, implementação sem está devidamente documentada não será feita merge.
+
+#OBRIGADO!!!
+
