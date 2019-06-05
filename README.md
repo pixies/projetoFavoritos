@@ -7,7 +7,7 @@ Um pequeno exercício para praticas de programação
 Um simples sistema para guardar e gerenciar seus links de favortios
 
 ## Em que é feito
-1. python2
+1. python3
 2. Flask
 3. Sqlite3
 4. HTML5+CSS3+JS
