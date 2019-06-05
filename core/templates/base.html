@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     {% block head %}
-    <meta charset="uft-8" />
+    <meta charset="utf-8" />
     <meta name="description" content="Sistema de gestão de links favoritos" />
     <meta name="keywords" content="html, links, favoritos, bookmakers" />
     <meta name="autor" content="pixies" />
@@ -14,7 +13,7 @@
     <!-- Jquery file -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-    <!--<link rel="stylesheet" href="style.css" />-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
     <title>{% block title %}{% endblock %} - My Webpage</title>
     {% endblock %}
 </head>
@@ -33,13 +32,7 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/fav.js') }}"></script>
 
-    <script>
-        
-        $(document).ready(function(){
-            console.log('JS Loaded');
-        });
-
-    </script>
 </body>
 </html>
