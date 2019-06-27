@@ -1,3 +1,18 @@
 body {
-    background-color: #999;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #DDECEE;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer.page-footer {
+    background-color: #90CAF9;
+}
+
+nav {
+    background-color: #90CAF9;
 }
