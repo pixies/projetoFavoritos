@@ -16,3 +16,26 @@ footer.page-footer {
 nav {
     background-color: #90CAF9;
 }
+
+h1.title {
+    font-size: 20px;
+}
+
+#toast-container {
+    position: fixed !important;
+    top: 50px !important;
+    left: 0px !important;
+    color: red;
+}
+
+.fixed-action-btn {
+    position: fixed !important;
+    bottom: 155px;
+}
+
+.down {
+
+    position: relative;
+    bottom: inherit;
+    top: 28px;
+}
