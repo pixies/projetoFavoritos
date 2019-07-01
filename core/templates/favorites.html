@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<h1 class="title">My favorites</h1>
+<ul class="collection">
+
+{% if msg %}
+  {{msg}}
+{% endif %}
+  {% if favs %}
+  {% for fav in favs %}	
+    <li class="collection-item avatar">
+    <a href="{{fav.link}}" target="_blank">
+      <i class="material-icons circle">folder</i>
+      <span class="title">{{fav.title}}</span>
+      <!--<p>{{fav.link}}
+      </p>-->
+    </a>
+      <a href="#!" class="secondary-content"><i class="material-icons sup">share</i></a>
+      <a href="#!" class="secondary-content"><i class="material-icons down">remove_circle_outline</i></a>
+    </li>
+	{% endfor %}
+  {% endif %}
+</ul>
+{% endblock %}
+{% block addfav %}
+        <div class="row">
+            <div class="fixed-action-btn">
+              <a class="btn-floating btn-large light-blue lighten-4">
+                <i class="large material-icons">star</i>
+              </a>
+              <ul>
+                <li><a class="btn-floating red" href="{{url_for('add_favorites')}}"><i class="material-icons">plus_one</i></a></li>
+                <li><a class="btn-floating yellow darken-1"><i class="material-icons">search</i></a></li>
+                <!--<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>-->
+              </ul>
+            </div>
+        </div>
+{% endblock %}
