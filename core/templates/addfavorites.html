@@ -1,0 +1,73 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+	<h1 class="title">New Favorite</h1>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				{{message}}
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<form method="post" action="">
+		{{ form.hidden_tag() }}
+		<div class="row">
+	        <div class="input-field col l6 s12">
+	            {% if form.title.errors %}
+	                {{ form.title(class="invalid") }}
+	                {{ form.title.label }}
+	                    <div class="invalid-feedback">
+	                        {% for error in form.title.errors %}
+	                            <span class="errors_fields red-text">{{ error }}</span>
+	                        {% endfor %}
+	                    </div>
+	            {% else %}
+	                {{ form.title(class="validate") }}
+	                {{ form.title.label }}
+	            {% endif %}
+	        </div>
+    	</div>
+    	<div class="row">
+	        <div class="input-field col l6 s12">
+	            {% if form.link.errors %}
+	                {{ form.link(class="invalid") }}
+	                {{ form.link.label }}
+	                    <div class="invalid-feedback">
+	                        {% for error in form.link.errors %}
+	                            <span class="errors_fields red-text">{{ error }}</span>
+	                        {% endfor %}
+	                    </div>
+	            {% else %}
+	                {{ form.link(class="validate") }}
+	                {{ form.link.label }}
+	            {% endif %}
+	        </div>
+    	</div>
+    	<div class="row">
+	        <div class="input-field col l6 s12">
+	            {% if form.description.errors %}
+	                {{ form.description(class="invalid") }}
+	                {{ form.description.label }}
+	                    <div class="invalid-feedback">
+	                        {% for error in form.description.errors %}
+	                            <span class="errors_fields red-text">{{ error }}</span>
+	                        {% endfor %}
+	                    </div>
+	            {% else %}
+	                {{ form.description(class="validate") }}
+	                {{ form.description.label }}
+	            {% endif %}
+	        </div>
+    	</div>
+    	<div class="row">
+        <div class="col s12">
+          {{ form.submit(class="waves-effect waves-light btn light-blue lighten-4") }}
+        </div>
+      </div>
+	</form>
+		
+{% endblock %}
+
+{% block addfav %}
+{% endblock %}
