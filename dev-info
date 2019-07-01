@@ -1,0 +1,5 @@
+flask libs:
+
+flask-login - login manager
+flask-bcrypt - encripy passwords
+flask-sqlalchemy - orm
