@@ -1,7 +1,8 @@
+<div class='nav-fixed'>
 <nav>
     <div class="nav-wrapper">
         <div class="container">
-            <a href="#!" class="brand-logo">my.favorites</a>
+            <a href="{{url_for('home')}}" class="brand-logo">my.favorites</a>
         </div>
 
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -9,12 +10,16 @@
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('about') }}">About</a></li>
             <li><a href="{{ url_for('blog') }}">Blog</a></li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
         </ul>
     </div>
 </nav>
-
+</div>
 <ul id="slide-out" class="sidenav">
     <li>
         <div class="user-view">
@@ -22,14 +27,19 @@
             <img src="https://gartic.com.br/imgs/mural/bl/bloom__winx/desenho-abstrato-informal.png">
           </div>
           <a href="#user"><img class="circle" src="https://cdn4.vectorstock.com/i/thumb-large/37/58/hacker-character-avatar-icon-vector-11573758.jpg"></a>
-          <a href="#name"><span class="white-text name">John Doe</span></a>
-          <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+          <a href="#name"><span class="blue-text name">{{current_user.username}}</span></a>
+          <a href="#email"><span class="blue-text email">{{current_user.email}}</span></a>
         </div>
     </li>
     <li><a href="{{ url_for('home') }}"><i class="material-icons">cloud</i>Home</a></li>
     <li><a href="{{ url_for('about') }}">About</a></li>
     <li><a href="{{ url_for('blog') }}">Blog</a></li>
     <li><div class="divider"></div></li>
-    <li><a class="waves-effect" href="{{ url_for('login') }}">Login</a></li>
-    <li><a class="waves-effect" href="{{ url_for('register') }}">Register</a></li>
+    {% if current_user.is_authenticated %}
+        <li><a class="waves-effect" href="{{ url_for('logout') }}">Logout</a></li>
+    {% else %}
+        <li><a class="waves-effect" href="{{ url_for('login') }}">Login</a></li>
+        <li><a class="waves-effect" href="{{ url_for('register') }}">Register</a></li>
+    {% endif %}
+
 </ul>
